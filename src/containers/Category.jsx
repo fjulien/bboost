@@ -6,17 +6,23 @@ import { Row, Col } from 'reactstrap';
 class Category extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+        }
     }
 
-
-
-    render() { 
-        return ( 
+    render() {
+        return (
             <div className='Category'>
                 <Row>
-                    {console.log("la")}
-                    {this.props.elements.filter(element => element.mot_clef === this.props.filtre).map(element =>
+                    <Col sm='12'>
+                        <h2>
+                            {this.props.filter.categorie}
+                        </h2>
+                    </Col>
+                </Row>
+                <Row>
+                    {console.log(this.props)}
+                    {this.props.elements.filter(ele => ele.mot_clef === this.props.filter.categorie).map(element =>
                         <Col sm='3'>
                             <CardElement
                                 image={element.image}
@@ -28,14 +34,15 @@ class Category extends Component {
                     }
                 </Row>
             </div>
-         );
+        );
     }
 }
 
 function mstp(state) {
     return {
         elements: state.elements,
+        filter: state.filtre,
     }
 }
- 
+
 export default connect(mstp)(Category);

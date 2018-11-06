@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import Category from './Category';
 import { Button, Col, Row } from 'reactstrap';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import history from "../history";
+import { getCategorie } from "../actions";
+
+import './Data.css'
 
 class Data extends Component {
     constructor(props) {
@@ -10,41 +15,52 @@ class Data extends Component {
         }
     }
 
+    save(cat) {
+        this.props.getCategorie(cat);
+        history.push('/categorie');
+    }
+
     render() {
         return (
             <div className='Data'>
-                <Row>
+                <Row className='ligneCat'>
                     <Col sm='4'>
-                        <Link to="category" params={{ type: "melanges" }}>Create Idea</Link>
-                        <Button onClick={this.recherche} name="Carcinome" >Carcinome</Button>
+                        <div className='elementCat' onClick={() => this.save('Carcinome')}>Carcinome</div>
                     </Col>
                     <Col sm='4'>
-                        <Button onClick={this.recherche} name="Sarcome" >Sarcome</Button>
+                        <div className='elementCat' onClick={() => this.save('Sarcome')}>Sarcome</div>
                     </Col>
                     <Col sm='4'>
-                        <Button onClick={this.recherche} name="Myelome" >Myélome</Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col sm='4'>
-                        <Button onClick={this.recherche} name="ALeucemieutre" >Leucémie</Button>
-                    </Col>
-                    <Col sm='4'>
-                        <Button onClick={this.recherche} name="Lymphome" >Lymphome</Button>
-                    </Col>
-                    <Col sm='4'>
-                        <Button onClick={this.recherche} name="melanges" >Types mélangés</Button>
+                        <div className='elementCat' onClick={() => this.save('Myelome')}>Myélome</div>
                     </Col>
                 </Row>
-                
-                <Category
-                    elements={this.props.elements}
-                />
+                <Row className='ligneCat'>
+                    <Col sm='4'>
+                        <div className='elementCat' onClick={() => this.save('Leucemie')}>Leucémie</div>
+                    </Col>
+                    <Col sm='4'>
+                        <div className='elementCat' onClick={() => this.save('Lymphome')}>Lymphome</div>
+                    </Col>
+                    <Col sm='4'>
+                        <div className='elementCat' onClick={() => this.save('Melanges')}>Mélangés</div>
+                    </Col>
+
+                </Row>
+
+
             </div>
         );
     }
 }
 
+function mstp(state) {
+    return {
+        elements: state.elements,
+    }
+}
 
+function mdtp(dispatch) {
+    return bindActionCreators({ getCategorie }, dispatch)
+}
 
-export default Data;
+export default connect(mstp, mdtp)(Data);
