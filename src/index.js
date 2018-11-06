@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducer from './reducers';
+import history from "./history";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,9 +16,9 @@ const store = createStore(allReducer);
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
             <App />
-        </BrowserRouter>
+        </Router>
     </Provider>
     , document.getElementById('root'));
 
