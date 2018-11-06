@@ -1,0 +1,11 @@
+.logo{
+    width: 70px !important;
+}
+
+.text_logo{
+    color: #293787;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: inherit;
+}
