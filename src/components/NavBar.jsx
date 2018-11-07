@@ -55,6 +55,15 @@ class NavBar extends Component {
                             <Link to='/ajout'>Ajout</Link>
                      </NavLink>
                     </NavItem>
+                    <NavItem>
+                        <NavLink
+                            className={classnames({ active: this.state.activeTab === '4' })}
+                            onClick={() => { this.toggle('4'); }}
+                        >
+                            <Link to='/chart'>Chart</Link>
+                     </NavLink>
+                    </NavItem>
+                    
                 </Nav>
                 </Container>
             </div>

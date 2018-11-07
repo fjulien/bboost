@@ -4,6 +4,8 @@ import NavBar from './components/NavBar';
 import { Route } from "react-router-dom";
 import Data from './components/Data';
 import { Container } from 'reactstrap';
+import Aide from './components/Aide/Aide';
+import Chart from './components/Chart/Chart';
 
 
 class App extends Component {
@@ -14,7 +16,8 @@ class App extends Component {
         <Container>
           <Route exact path="/" component={Data} />
           <Route path="/ajout" component={Data} />
-          <Route path="/aide" component={Data} />
+          <Route path="/aide" component={Aide} />
+          <Route path="/chart" component={Chart} />
         </Container>
       </div>
     );
