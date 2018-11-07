@@ -3,6 +3,8 @@ import CardElement from '../components/CardElement';
 import { connect } from 'react-redux';
 import { Row, Col } from 'reactstrap';
 
+import './Category.css'
+
 class Category extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +17,7 @@ class Category extends Component {
             <div className='Category'>
                 <Row>
                     <Col sm='12'>
-                        <h2>
+                        <h2 className='title'>
                             {this.props.filter.categorie}
                         </h2>
                     </Col>

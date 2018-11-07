@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, TabContent, TabPane, Nav, NavItem, NavLink, Container } from 'reactstrap';
+import { Row, Col, Nav, NavItem, NavLink, Container } from 'reactstrap';
 import classnames from 'classnames';
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ class NavBar extends Component {
                             className={classnames({ active: this.state.activeTab === '1' })}
                             onClick={() => { this.toggle('1'); }}
                         >
-                                <Link exact to='/'>Data</Link>
+                                <Link className='linkNav' exact to='/'>Data</Link>
                         </NavLink>
                     </NavItem>
                     <NavItem>
@@ -44,7 +44,7 @@ class NavBar extends Component {
                             className={classnames({ active: this.state.activeTab === '2' })}
                             onClick={() => { this.toggle('2'); }}
                         >
-                            <Link to='/aide'>Aide</Link>
+                            <Link className='linkNav' to='/aide'>Aide</Link>
                      </NavLink>
                     </NavItem>
                     <NavItem>
@@ -52,7 +52,7 @@ class NavBar extends Component {
                             className={classnames({ active: this.state.activeTab === '3' })}
                             onClick={() => { this.toggle('3'); }}
                         >
-                            <Link to='/ajout'>Ajout</Link>
+                            <Link className='linkNav' to='/ajout'>Ajout</Link>
                      </NavLink>
                     </NavItem>
                 </Nav>

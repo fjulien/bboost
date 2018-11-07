@@ -8,4 +8,18 @@
     font-size: 1.5em;
     font-weight: bold;
     font-family: inherit;
+    
+}
+
+.linkNav{
+    color: black;
+     font-weight: bold; 
+     
+}
+
+.linkNav:hover{
+    color: #293787;
+    text-decoration: none;
+     font-weight: bold; 
+     
 }
