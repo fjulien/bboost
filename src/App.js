@@ -22,7 +22,7 @@ class App extends Component {
             <Route exact path="/" component={Data} />
             <Route path="/ajout" component={Data} />
             <Route path="/aide" component={Aide} />
-      <Route path="/chart" component={Chart} />
+            <Route path="/chart" component={Chart} />
             <Route path="/categorie" component={Category} />
           </Switch>
 

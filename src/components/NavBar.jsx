@@ -60,7 +60,7 @@ class NavBar extends Component {
                             className={classnames({ active: this.state.activeTab === '4' })}
                             onClick={() => { this.toggle('4'); }}
                         >
-                            <Link to='/chart'>Chart</Link>
+                                <Link className='linkNav' to='/chart'>Chart</Link>
                      </NavLink>
                     </NavItem>
                     
