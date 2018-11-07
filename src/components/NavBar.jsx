@@ -36,7 +36,7 @@ class NavBar extends Component {
                             className={classnames({ active: this.state.activeTab === '1' })}
                             onClick={() => { this.toggle('1'); }}
                         >
-                            <Link to='/'>Data</Link>
+                                <Link exact to='/'>Data</Link>
                         </NavLink>
                     </NavItem>
                     <NavItem>
