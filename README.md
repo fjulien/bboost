@@ -1,8 +1,7 @@
-# Projet BBOOST
 
-Commmandes pour installer le projet.
+# Project Hackathon 
 
-npm install
+------------
+> October
 
-npm i bootstrap  reactstrap react react-dom  react-redux  redux react-router-dom --save react-chartjs-2
-npm i
+We have to make the web site in 30 hours with a team of 5 developers and 2 communicating students.
