@@ -1,5 +1,5 @@
 
-# Project Hackathon 
+# Project Hackathon aide
 
 ------------
 > October
